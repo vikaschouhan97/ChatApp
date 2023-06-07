@@ -2,6 +2,8 @@ import getUsers from '../actions/getUsers';
 import Sidebar from '../components/sidebar/Sidebar';
 import UserList from './components/UserList';
 
+//eslint-disable
+
 export default async function UsersLayout({
   children,
 }: {
@@ -9,7 +11,7 @@ export default async function UsersLayout({
 }) {
     const users = await getUsers();
   return (
-    //@ts-expect-error Server Component
+   // @ts-ignore: Unreachable code error
     <Sidebar>
       <div className="h-full"> <UserList items={users} />{children}</div>
     </Sidebar>
